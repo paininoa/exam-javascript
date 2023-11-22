@@ -17,3 +17,27 @@ base elevato alla exponent. (2.5 punti)
 messaggio che indica che l'operazione è completa. (2.5 punti)
 
 */
+
+const power = (base, exponent) => {
+  try {
+    if (isNaN(base) && isNaN(exponent)) {
+      throw new Error(
+        `The values 'base' and 'exponent' are not numbers: '${base}', '${exponent}'.`
+      );
+    } else if (isNaN(base)) {
+      throw new Error(`The value 'base' is not a number: '${base}'.`);
+    } else if (isNaN(exponent)) {
+      throw new Error(`The value 'exponent' is not a number: '${exponent}'.`);
+    } else {
+      //console.log(base ** exponent);     // TEST CODE---------------------------------
+      return base ** exponent;
+    }
+  } catch (error) {
+    console.error(error.message);
+    return null;
+  } finally {
+    console.log("Operazione completata");
+  }
+};
+
+// power(2, 3);             // TEST values ----------------------------------------------
